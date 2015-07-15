@@ -7,7 +7,12 @@
   (define-key function-key-map "\eO2A" [S-up])
   (define-key function-key-map "\eO2B" [S-down])
   (define-key function-key-map "\eO2C" [S-right])
-  (define-key function-key-map "\eO2D" [S-left])
+  
+
+
+
+
+(define-key function-key-map "\eO2D" [S-left])
   (define-key function-key-map "\eO5C" [C-right])
   (define-key function-key-map "\eO5D" [C-left])
   (define-key function-key-map "\eO6C" [C-S-right])

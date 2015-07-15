@@ -3,6 +3,7 @@
 (require-package 'json-mode)
 (require-package 'js2-mode)
 (require-package 'yasnippet)
+(require-package 'auto-complete)
 (require 'auto-complete-config)
 (maybe-require-package 'ac-js2)
 
@@ -17,6 +18,7 @@
 ;; auto-complete
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
+
 ;;; set the trigger key so that it can work together with yasnippet on tab key,
 ;;; if the word exists in yasnippet, pressing tab will cause yasnippet to
 ;;; activate, otherwise, auto-complete will

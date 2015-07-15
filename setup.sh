@@ -39,12 +39,22 @@ EOF
 # install essential packages
 sudo apt-get install git vim emacs24 build-essential
 
+# setup environment variable
+
+echo "export TERM=xterm-256color" >> ~/.bashrc
+
+# setup aliases
+
 # clone emacs configuration 
 cd ~
-mkdir workspace
-cd workspace
-git clone https://github.com/jeffffrey/emacs.d.git
+if [ ! -d ~/workspace/emacs.d ]; then
+    mkdir workspace
+    cd workspace
+    git clone https://github.com/jeffffrey/emacs.d.git
 
+else 
+    echo emacs.d exist, skip
+fi
 # copy emacs setting to right place
 
 
