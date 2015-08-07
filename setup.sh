@@ -37,11 +37,17 @@ EOF
 [ "$DISTRIB_CODENAME" = "trusty" ] || exit 1
 
 # install essential packages
-sudo apt-get install git vim emacs24 build-essential
+sudo apt-get update
+sudo apt-get install git vim emacs24 build-essential tmux
 
 # setup environment variable
 
-echo "export TERM=xterm-256color" >> ~/.bashrc
+if [ ! -f ~/.setup.done ]
+then 
+    echo "export TERM=xterm-256color" >> ~/.bashrc
+    echo "alias em='emacs -nw'" >> ~/.bashrc
+    touch ~/.setup.done
+fi 
 
 # setup aliases
 
@@ -55,6 +61,13 @@ if [ ! -d ~/workspace/emacs.d ]; then
 else 
     echo emacs.d exist, skip
 fi
+
 # copy emacs setting to right place
+ln -s ~/workspace/emacs.d ~/.emacs.d
 
 
+
+# git settings
+git config --global user.name "Jeffrey Liu"
+git config --global user.email "jeffffrey@gmail"
+git config --global core.editor emacs
